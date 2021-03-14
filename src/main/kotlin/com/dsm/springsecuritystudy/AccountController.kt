@@ -17,9 +17,8 @@ class AccountController(
 
     @PostMapping("/login")
     fun login(@RequestBody request: LoginRequest): LoginResponse {
-        println("id: ${request.accountId}")
-        println("password: ${request.accountPassword}")
         val account = accountRepository.findByIdOrNull(request.accountId) ?: throw AccountNotFoundException(request.accountId)
+        println("request.accountPassword: ${request.accountPassword}")
         println("account.password: ${account.password}")
         return if (passwordEncoder.matches(request.accountPassword, account.password))
             LoginResponse(tokenProvider.createToken(account.id, account.roles, 1000 * 60 * 60))
@@ -29,10 +28,12 @@ class AccountController(
 
     @PostMapping("/join")
     fun join(@RequestBody request: JoinRequest) {
+        val password = passwordEncoder.encode(request.accountPassword)
+        println("password: $password")
         accountRepository.save(
             Account(
                 id = request.accountId,
-                password = "{noop}${request.accountPassword}",
+                password = passwordEncoder.encode(request.accountPassword),
                 name = request.accountName,
                 roles = Collections.singletonList("ROLE_USER")
             )

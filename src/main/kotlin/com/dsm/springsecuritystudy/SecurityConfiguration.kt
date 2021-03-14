@@ -15,8 +15,6 @@ class SecurityConfiguration(
     private val tokenProvider: TokenProvider,
 ) : WebSecurityConfigurerAdapter() {
 
-    override fun authenticationManagerBean(): AuthenticationManager = super.authenticationManagerBean()
-
     override fun configure(http: HttpSecurity) {
         http
             .httpBasic().disable()

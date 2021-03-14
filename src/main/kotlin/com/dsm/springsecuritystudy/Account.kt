@@ -15,9 +15,6 @@ class Account(
     @Column(name = "password")
     private val password: String,
 
-    @Column(name = "name")
-    val name: String,
-
     @ElementCollection(fetch = FetchType.EAGER)
     var roles: MutableList<String>,
 ) : UserDetails {
