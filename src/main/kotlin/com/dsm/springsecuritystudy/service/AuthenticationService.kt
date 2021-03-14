@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.stereotype.Service
 
 @Service
-class AuthorizationService(
+class AuthenticationService(
     private val accountRepository: AccountRepository,
 ) : UserDetailsService {
 
