@@ -1,4 +1,4 @@
-package com.dsm.springsecuritystudy
+package com.dsm.springsecuritystudy.configuration
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

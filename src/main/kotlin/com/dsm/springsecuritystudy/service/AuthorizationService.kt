@@ -1,11 +1,13 @@
-package com.dsm.springsecuritystudy
+package com.dsm.springsecuritystudy.service
 
+import com.dsm.springsecuritystudy.exception.AccountNotFoundException
+import com.dsm.springsecuritystudy.repository.AccountRepository
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.stereotype.Service
 
 @Service
-class AccountService(
+class AuthorizationService(
     private val accountRepository: AccountRepository,
 ) : UserDetailsService {
 

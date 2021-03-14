@@ -1,5 +1,6 @@
-package com.dsm.springsecuritystudy
+package com.dsm.springsecuritystudy.exception
 
+import com.dsm.springsecuritystudy.exception.handler.CommonException
 import org.springframework.http.HttpStatus
 
 class AccountNotFoundException(

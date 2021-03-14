@@ -1,5 +1,6 @@
-package com.dsm.springsecuritystudy
+package com.dsm.springsecuritystudy.controller.filter
 
+import com.dsm.springsecuritystudy.service.provider.TokenProvider
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.web.filter.GenericFilterBean
 import javax.servlet.FilterChain

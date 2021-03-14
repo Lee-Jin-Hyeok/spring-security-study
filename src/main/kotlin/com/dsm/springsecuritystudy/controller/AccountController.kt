@@ -1,5 +1,12 @@
-package com.dsm.springsecuritystudy
+package com.dsm.springsecuritystudy.controller
 
+import com.dsm.springsecuritystudy.controller.request.JoinRequest
+import com.dsm.springsecuritystudy.controller.request.LoginRequest
+import com.dsm.springsecuritystudy.controller.response.LoginResponse
+import com.dsm.springsecuritystudy.domain.Account
+import com.dsm.springsecuritystudy.exception.AccountNotFoundException
+import com.dsm.springsecuritystudy.repository.AccountRepository
+import com.dsm.springsecuritystudy.service.provider.TokenProvider
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.web.bind.annotation.GetMapping
@@ -34,7 +41,6 @@ class AccountController(
             Account(
                 id = request.accountId,
                 password = passwordEncoder.encode(request.accountPassword),
-                name = request.accountName,
                 roles = Collections.singletonList("ROLE_USER")
             )
         )

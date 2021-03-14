@@ -1,4 +1,4 @@
-package com.dsm.springsecuritystudy
+package com.dsm.springsecuritystudy.controller.request
 
 import com.fasterxml.jackson.annotation.JsonProperty
 

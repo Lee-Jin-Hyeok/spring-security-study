@@ -1,4 +1,4 @@
-package com.dsm.springsecuritystudy
+package com.dsm.springsecuritystudy.service.provider
 
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm

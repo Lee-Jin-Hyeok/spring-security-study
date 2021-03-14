@@ -1,4 +1,4 @@
-package com.dsm.springsecuritystudy
+package com.dsm.springsecuritystudy.exception.handler
 
 import org.springframework.http.HttpStatus
 
