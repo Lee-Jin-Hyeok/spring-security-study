@@ -25,7 +25,7 @@ class SecurityConfiguration(
             .authorizeRequests()
             .antMatchers("/join", "/**/login").permitAll()
             .antMatchers(HttpMethod.GET, "/hello/**").permitAll()
-            .anyRequest().hasRole("USER")
+            .anyRequest().authenticated()
             .and()
             .addFilterBefore(AuthenticationFilter(tokenProvider), UsernamePasswordAuthenticationFilter::class.java)
     }
